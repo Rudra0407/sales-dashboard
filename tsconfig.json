@@ -13,14 +13,20 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+
+    // add this so TS knows how to resolve '@/' imports
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/styles/*":     ["styles/*"],
+      "@/app/*":        ["src/app/*"]
+    },
+
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
